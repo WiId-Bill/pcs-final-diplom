@@ -45,9 +45,13 @@ public class BooleanSearchEngine implements SearchEngine {
                     }
                     currentList.add(pageEntry);
                     map.put(key, currentList);
+                    Collections.sort(currentList);
                 }
+
             }
         }
+
+
     }
 
 
@@ -55,7 +59,6 @@ public class BooleanSearchEngine implements SearchEngine {
     public List<PageEntry> search(String word) {
         List<PageEntry> result = map.get(word.toLowerCase());
         if (result != null) {
-            Collections.sort(result);
             return result;
         }
 
